@@ -6,11 +6,17 @@ module.exports = {
     entry: './js/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        port: 3000,
+        overlay: true,
+        open: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html'
-        })
-    ]
+            template: 'index.html',
+        }),
+    ],
 }
